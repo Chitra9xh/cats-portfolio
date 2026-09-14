@@ -50,3 +50,22 @@ Project: Personal portfolio site (cat-themed, pixel-art, static React)
   - Repo not yet created/pushed to GitHub; Actions workflow therefore not yet run for real; HTTPS/custom-domain not yet live.
   - Once live, do the actual desktop + mobile visual check described in the README before calling Phase 1 truly done.
 - Verified by: `npm run build`, `npm run lint`, `./verify-build.sh` (all passing locally); live-domain and mobile-device verification still pending user action.
+
+---
+
+### [Phase 1 / Step 2] Fix Jekyll fallback, rewrite README, relocate logbook — partial
+- What changed:
+  - Diagnosed the live site (`chitra9xh.github.io/cats-portfolio`) via fetch: response had `meta-generator: Jekyll v3.10.0`, meaning Pages was serving via "Deploy from a branch" and auto-rendering `README.md` as the homepage since no `index.html` exists at repo root. The Next.js build was never actually deployed.
+  - Added `public/.nojekyll` as a backup guard.
+  - Real fix documented for the user: repo Settings → Pages → Source must be "GitHub Actions", then re-run `deploy.yml`.
+  - Rewrote `README.md` in caveman-mild style (terse bullets, checklist format) per user request.
+  - Moved `LOGBOOK.md` from repo root to `internal/dev/notes/logs/archive/LOGBOOK.md` per user request.
+  - Rebuilt and reran `verify-build.sh` — passes.
+- Decisions locked in:
+  - README stays caveman-mild going forward for this project.
+  - Logbook path is now `internal/dev/notes/logs/archive/LOGBOOK.md` — future entries append here, not at root.
+- Deviations from the plan: None.
+- Open questions / follow-ups:
+  - User still needs to flip the Pages source setting and re-run the workflow — I can't change repo settings myself.
+  - Once source is fixed, re-check the live URL to confirm the actual pixel-art page (not README) renders.
+- Verified by: `npm run build`, `./verify-build.sh` (passing); live site re-check still pending user action on their Pages settings.
