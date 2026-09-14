@@ -69,3 +69,21 @@ Project: Personal portfolio site (cat-themed, pixel-art, static React)
   - User still needs to flip the Pages source setting and re-run the workflow — I can't change repo settings myself.
   - Once source is fixed, re-check the live URL to confirm the actual pixel-art page (not README) renders.
 - Verified by: `npm run build`, `./verify-build.sh` (passing); live site re-check still pending user action on their Pages settings.
+
+
+
+---
+
+### [Phase 1 / Step 3, continued] Pages Source fixed, custom domain live — done
+- What changed:
+  - User flipped Pages Source to "GitHub Actions" — confirmed via screenshot that the raw `chitra9xh.github.io/cats-portfolio/` URL then served the real page content (not README), though still unstyled there as expected (no basePath, checked on the non-custom-domain URL — exactly the known/accepted limitation from the prior entry).
+  - User applied `phase1-step3.patch` (real `CNAME`, extended `verify-build.sh`, README/logbook updates), pushed, then completed the two remaining account-bound steps: pointed `chitransh.runs-on.dev` at `chitra9xh.github.io` via runs-on.dev, and set the custom domain + Enforce HTTPS in repo Settings → Pages.
+  - Fetched `https://chitransh.runs-on.dev` directly to verify: resolves over HTTPS (no redirect needed, no cert warning), page title and copy match `site-config.ts`, no Jekyll `meta-generator` tag — confirms the real Next.js build is what's being served now, not a fallback.
+  - User's own screenshot of the live domain confirms full visual design renders as built: charcoal background, amber cat sprite with moss-green eyes, pixel-bordered stage panel, Geist Pixel headings, correct layout. This matches the Phase 1 design intent from Step 1.
+- Decisions locked in: None new — this step closes out decisions already made in Steps 1–3.
+- Deviations from the plan: None beyond what's already logged in the prior entry (all account-bound steps were, as expected, done by the user rather than by this session).
+- Open questions / follow-ups:
+  - Real mobile-device check (not devtools) still hasn't been explicitly confirmed on the *styled* live domain — worth a quick phone check before calling Phase 1 fully closed, though the screenshot's layout looks consistent with the design.
+  - `src/lib/site-config.ts` copy already reads as real (not placeholder) — the "add real name/bio" checklist item from Step 1 appears already satisfied.
+  - Phase 1 goal (themed home page, live, correct on the real custom domain) is now met. Next up is Phase 2: About/Projects/Contact pages with real navigation, reusing `site-config.ts` and the same theme tokens.
+- Verified by: direct fetch of `https://chitransh.runs-on.dev` (HTTPS resolves, correct content, no Jekyll fallback); user-provided screenshot of the live, fully-styled desktop rendering.
