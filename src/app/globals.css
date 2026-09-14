@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "Geist Pixel";
+  src: url("/fonts/GeistPixel-Square.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Color tokens */
+  --bg: #14161c; /* night-sky backdrop */
+  --surface: #1b1e26; /* panel surface, one step lighter than bg */
+  --ink: #eef0e6; /* warm off-white text */
+  --ink-dim: #9aa0ad; /* secondary text */
+  --accent: #e0a458; /* tabby amber -- cat body / primary accent */
+  --accent-2: #8fae52; /* moss green -- cat eyes / secondary accent */
+  --line: #2c3038; /* hairline borders */
+  --line-strong: #0e1015; /* sprite outline / pixel border ink */
+
+  /* Type */
+  --font-pixel: "Geist Pixel", monospace;
+  --font-body:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-pixel);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--line-strong);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 2px;
+}
+
+/* One deliberate, orchestrated motion moment: the cat sprite blinks on an
+   interval, snapped (not eased) to stay true to the pixel aesthetic. */
+.pixelCatEye {
+  animation: pixel-blink 5s steps(1) infinite;
+}
+
+@keyframes pixel-blink {
+  0%,
+  94%,
+  100% {
+    opacity: 1;
+  }
+  96%,
+  98% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixelCatEye {
+    animation: none;
+  }
+}

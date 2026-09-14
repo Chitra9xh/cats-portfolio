@@ -1,0 +1,81 @@
+.main {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 880px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+@media (min-width: 720px) {
+  .wrap {
+    grid-template-columns: 260px 1fr;
+    align-items: center;
+    gap: 40px;
+  }
+}
+
+/* Chunky pixel border via stacked hard-edged box-shadows: no border-radius,
+   no CSS gradients, no drop shadow blur -- keeps the game-HUD frame look. */
+.stage {
+  background: var(--surface);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  box-shadow:
+    6px 0 0 var(--line-strong),
+    -6px 0 0 var(--line-strong),
+    0 6px 0 var(--line-strong),
+    0 -6px 0 var(--line-strong);
+  margin: 6px;
+}
+
+.sprite {
+  width: 100%;
+  max-width: 180px;
+  image-rendering: pixelated;
+}
+
+.spriteCaption {
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  color: var(--ink-dim);
+  text-align: center;
+}
+
+.textPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.headline {
+  font-size: clamp(20px, 4vw, 30px);
+}
+
+.intro {
+  max-width: 60ch;
+  color: var(--ink-dim);
+}
+
+.status {
+  font-family: var(--font-pixel);
+  font-size: 12px;
+  color: var(--accent-2);
+  border-left: 4px solid var(--accent-2);
+  padding-left: 12px;
+}
+
+.byline {
+  font-size: 13px;
+  color: var(--ink-dim);
+}
