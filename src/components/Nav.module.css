@@ -1,0 +1,59 @@
+/* Nav is always visible — desktop AND mobile. No hamburger icon,
+   no collapsing menu: under 720px the row just wraps into a
+   2-column grid of the same chunky tabs, so there's never a
+   hidden-behind-an-icon state to worry about. */
+
+.nav {
+  width: 100%;
+  padding: 12px 0;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tab {
+  display: block;
+  text-align: center;
+  padding: 10px 8px;
+  font-family: var(--font-pixel, "Geist Pixel", monospace);
+  font-size: 13px;
+  color: #e6e6e6;
+  text-decoration: none;
+  background: #1c1f28;
+  border: 2px solid #0a0b0e;
+  /* stacked hard-edged shadow — same pixel border technique as the
+     home page stage panel, no border-radius, no blur */
+  box-shadow: 3px 3px 0 #0a0b0e;
+}
+
+.tab:hover {
+  color: #14161c;
+  background: #8fae52; /* moss accent on hover */
+}
+
+.tab:focus-visible {
+  outline: 2px solid #e0a458;
+  outline-offset: 2px;
+}
+
+.active {
+  color: #14161c;
+  background: #e0a458; /* amber accent marks current page */
+}
+
+@media (max-width: 719px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tab {
+    font-size: 12px;
+    padding: 12px 8px; /* slightly taller tap target on mobile */
+  }
+}

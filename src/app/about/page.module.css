@@ -1,0 +1,114 @@
+.main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 20px 64px;
+}
+
+.h1 {
+  font-family: var(--font-pixel, "Geist Pixel", monospace);
+  font-size: 20px;
+  line-height: 1.5;
+  color: #e0a458;
+  margin: 32px 0 24px;
+}
+
+.bio {
+  color: #d8d8d8;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.bio p {
+  margin: 0 0 16px;
+}
+
+.section {
+  margin-top: 48px;
+}
+
+.h2 {
+  font-family: var(--font-pixel, "Geist Pixel", monospace);
+  font-size: 15px;
+  color: #8fae52;
+  margin: 0 0 16px;
+}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.entry {
+  background: #1c1f28;
+  border: 2px solid #0a0b0e;
+  box-shadow: 4px 4px 0 #0a0b0e;
+  padding: 16px;
+}
+
+.entryHead {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.entryRole {
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+.entryPeriod {
+  color: #9a9a9a;
+  font-size: 14px;
+}
+
+.entryOrg {
+  color: #e0a458;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.entry ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #c8c8c8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.skillGroup {
+  border-left: 3px solid #8fae52;
+  padding-left: 12px;
+}
+
+.skillCategory {
+  font-family: var(--font-pixel, "Geist Pixel", monospace);
+  font-size: 12px;
+  color: #8fae52;
+  margin-bottom: 6px;
+}
+
+.skillList {
+  color: #c8c8c8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 719px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .entryHead {
+    flex-direction: column;
+    gap: 2px;
+  }
+}
