@@ -1,10 +1,12 @@
 import styles from "./page.module.css";
 import PixelCat from "@/components/PixelCat";
 import { siteConfig } from "@/lib/site-config";
+import Nav from "@/components/Nav";
 
 export default function Home() {
   return (
     <main className={styles.main}>
+      <Nav activePath="/" />
       <div className={styles.wrap}>
         <div className={styles.stage}>
           <div className={styles.sprite}>
