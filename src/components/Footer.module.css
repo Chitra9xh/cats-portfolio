@@ -1,0 +1,34 @@
+.footer {
+  border-top: 1px solid var(--line);
+  margin-top: 4rem;
+  padding: 1.5rem 1rem;
+}
+
+.inner {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  font-family: "Deltarune", var(--font-pixel, monospace);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--ink-dim);
+}
+
+.divider {
+  color: var(--line);
+}
+
+@media (max-width: 640px) {
+  .inner {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .divider {
+    display: none;
+  }
+}

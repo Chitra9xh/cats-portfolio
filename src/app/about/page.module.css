@@ -1,9 +1,10 @@
 .main {
+  flex: 1;
+  width: 100%;
   max-width: 760px;
   margin: 0 auto;
   padding: 24px 20px 64px;
 }
-
 .h1 {
   font-family: var(--font-pixel, "Geist Pixel", monospace);
   font-size: 20px;

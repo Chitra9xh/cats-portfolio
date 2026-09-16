@@ -1,4 +1,6 @@
 .main {
+  flex: 1;
+  width: 100%;
   max-width: 760px;
   margin: 0 auto;
   padding: 24px 20px 64px;
@@ -30,9 +32,6 @@
   padding: 18px 20px;
 }
 
-/* alternating entries sit slightly right-shifted with the accent
-   border flipped to the right edge — content-neutral variation so
-   no two adjacent cards read identically */
 .entryOffset {
   margin-left: 20px;
   border-left: none;
