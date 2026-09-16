@@ -6,7 +6,9 @@ import Nav from "@/components/Nav";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Nav activePath="/" />
+     <div className={styles.navWrap}>
+  	<Nav activePath="/" />
+	</div>
       <div className={styles.wrap}>
         <div className={styles.stage}>
           <div className={styles.sprite}>

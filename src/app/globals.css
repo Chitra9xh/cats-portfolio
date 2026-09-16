@@ -14,6 +14,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "desc_font";
+  src: url("/fonts/arial-dmatrix.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Deltarune";
+  src: url("/fonts/deltarune.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #14161c;
   --surface: #1b1e26;
@@ -26,9 +42,7 @@
 
 
   --font-pixel: "Geist Pixel", monospace;
-  --font-body:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif;
+--font-body: "desc_font", sans-serif;
 
   color-scheme: dark;
 }
@@ -46,12 +60,14 @@ body {
 }
 
 body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
-  font-family: "Geist Sans", system-ui, -apple-system, sans-serif;
 }
 
 h1,

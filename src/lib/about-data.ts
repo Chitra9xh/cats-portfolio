@@ -1,7 +1,5 @@
-// ─────────────────────────────────────────────────────────────
-// ABOUT PAGE DATA — edit this file to update bio/experience/
-// volunteer content. The About page just renders these.
-// ─────────────────────────────────────────────────────────────
+// ABOUT PAGE DATA
+
 
 export const bio = {
   headline: "Building AR, VR, and web experiences, one project at a time.",
