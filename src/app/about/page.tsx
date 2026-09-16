@@ -14,6 +14,18 @@ export default function AboutPage() {
           <p key={i}>{p}</p>
         ))}
       </section>
+      
+      <section className={styles.section}>
+        <h2 className={styles.h2}>Skills</h2>
+        <div className={styles.skillsGrid}>
+          {Object.entries(skills).map(([category, items]) => (
+            <div key={category} className={styles.skillGroup}>
+              <div className={styles.skillCategory}>{category}</div>
+              <div className={styles.skillList}>{items.join(", ")}</div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className={styles.section}>
         <h2 className={styles.h2}>Experience</h2>
@@ -55,17 +67,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className={styles.section}>
-        <h2 className={styles.h2}>Skills</h2>
-        <div className={styles.skillsGrid}>
-          {Object.entries(skills).map(([category, items]) => (
-            <div key={category} className={styles.skillGroup}>
-              <div className={styles.skillCategory}>{category}</div>
-              <div className={styles.skillList}>{items.join(", ")}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+      
     </main>
   );
 }

@@ -22,8 +22,8 @@
   }
 }
 
-/* Chunky pixel border via stacked hard-edged box-shadows: no border-radius,
-   no CSS gradients, no drop shadow blur -- keeps the game-HUD frame look. */
+/* Chunky pixel border via stacked hard-edged box-shadows: no border-radius, no CSS gradients, no drop shadow blur -- keeps the game-HUD frame look.*/
+
 .stage {
   background: var(--surface);
   padding: 28px;
